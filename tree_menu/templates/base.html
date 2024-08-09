@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load menu_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Example</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+        li {
+            margin: 5px 0;
+        }
+        .active > a {
+            font-weight: bold;
+            color: red;
+        }
+        ul ul {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h2>Main Menu</h2>
+            {% draw_menu 'main_menu' %}
+            
+            <h2>Another Menu</h2>
+            {% draw_menu 'another_menu' %}
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        <!-- Main content -->
+        {% endblock %}
+    </main>
+</body>
+</html>
